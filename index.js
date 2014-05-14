@@ -1,6 +1,5 @@
 'use strict';
 
-var path = require('path');
 var gutil = require('gulp-util');
 var through = require('through2');
 var assign = require('object-assign');
@@ -20,7 +19,7 @@ module.exports = function (options) {
         throw new gutil.PluginError('gulp-scp', '`path` required.');
     }
 
-    var fileCount = 0;
+    var files = [];
     var remotePath = options.remotePath || '';
     delete options.remotePath;
 
@@ -35,16 +34,24 @@ module.exports = function (options) {
             return cb();
         }
 
-        var self = this;
-
         this.push(file);
+        files.push(file.path);
+        cb();
     }, function (cb) {
-        if (fileCount > 0) {
-            gutil.log('gulp-ftp:', gutil.colors.green(fileCount, fileCount === 1 ? 'file' : 'files', 'transferred successfully'));
+        if (files.length > 0) {
+            options.file = files.join(' ');
+            scp.send(options, function(err){
+                if(err) {
+                    gutil.log('gulp-scp:', gutil.colors.red(err));
+                } else {
+                    gutil.log('gulp-scp:', gutil.colors.green(files.length, files.length === 1 ? 'file' : 'files', 'transferred successfully'));
+                }
+                cb();
+            });
         } else {
-            throw new gutil.PluginError('gulp-scp', 'No files.');
+            gutil.log('gulp-scp:', gutil.colors.green('No files transferred'));
+            cb();
         }
 
-        cb();
     });
 };

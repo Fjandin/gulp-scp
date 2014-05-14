@@ -34,7 +34,6 @@
   "dependencies": {
     "gulp-util": "^2.2.0",
     "object-assign": "^0.2.1",
-    "parents": "^0.0.2",
     "through2": "^0.4.0",
     "scp": "^0.0.3"
   },
