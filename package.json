@@ -1,0 +1,49 @@
+{
+  "name": "gulp-scp",
+  "version": "0.0.1",
+  "description": "Transfer files via scp",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Fjandin/gulp-scp"
+  },
+  "author": {
+    "name": "René Bischoff",
+    "email": "rene.bischoff@gmail.com",
+    "url": "http://github.com/Fjandin"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "scp",
+    "file",
+    "files",
+    "transfer",
+    "protocol",
+    "server",
+    "client",
+    "upload",
+    "deploy",
+    "deployment"
+  ],
+  "dependencies": {
+    "gulp-util": "^2.2.0",
+    "object-assign": "^0.2.1",
+    "parents": "^0.0.2",
+    "through2": "^0.4.0",
+    "scp": "^0.0.3"
+  },
+  "readmeFilename": "readme.md",
+  "bugs": {
+    "url": "https://github.com/Fjandin/gulp-scp/issues"
+  },
+  "homepage": "https://github.com/Fjandin/gulp-scp",
+  "_id": "gulp-scp@0.0.1",
+  "_from": "gulp-scp@",
+  "_resolved": "https://registry.npmjs.org/gulp-scp/-/gulp-scp-0.0.1.tgz"
+}
