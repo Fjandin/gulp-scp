@@ -24,19 +24,26 @@ module.exports = function (options) {
     delete options.remotePath;
 
     return through.obj(function (file, enc, cb) {
-        if (file.isNull()) {
-            this.push(file);
-            return cb();
-        }
 
         if (file.isStream()) {
             this.emit('error', new gutil.PluginError('gulp-scp', 'Streaming not supported'));
             return cb();
         }
 
+        //Folder mode does not allow files
+        if (!options.folder && file.isNull()) {
+            this.push(file);
+            return cb();
+        }
+
+        //Folder only allows 1 path
+        if(options.folder && files.length){
+            return cb();
+        }
+
         this.push(file);
         files.push(file.path);
-        cb();
+        return cb();
     }, function (cb) {
         if (files.length > 0) {
             options.file = files.join(' ');

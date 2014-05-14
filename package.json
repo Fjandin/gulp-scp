@@ -1,6 +1,6 @@
 {
   "name": "gulp-scp",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Transfer files via scp",
   "license": "MIT",
   "repository": {
@@ -42,7 +42,7 @@
     "url": "https://github.com/Fjandin/gulp-scp/issues"
   },
   "homepage": "https://github.com/Fjandin/gulp-scp",
-  "_id": "gulp-scp@0.0.1",
+  "_id": "gulp-scp@0.0.3",
   "_from": "gulp-scp@",
-  "_resolved": "https://registry.npmjs.org/gulp-scp/-/gulp-scp-0.0.1.tgz"
+  "_resolved": "https://registry.npmjs.org/gulp-scp/-/gulp-scp-0.0.3.tgz"
 }

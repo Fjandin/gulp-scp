@@ -54,4 +54,4 @@ The path to transfer to has to exist.
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Sindre Sorhus](http://sindresorhus.com)
+[MIT](http://opensource.org/licenses/MIT) © [René Bischoff](http://github.com/Fjandin)
