@@ -54,6 +54,7 @@ module.exports = function (options) {
                     gutil.log('gulp-scp:', gutil.colors.green(files.length, files.length === 1 ? 'file' : 'files', 'transferred successfully'));
                 }
                 cb();
+                if (options.cb) {options.cb()}
             });
         } else {
             gutil.log('gulp-scp:', gutil.colors.green('No files transferred'));
